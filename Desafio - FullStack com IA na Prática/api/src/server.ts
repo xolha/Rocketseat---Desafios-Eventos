@@ -8,6 +8,7 @@ import { fastifySwagger } from "@fastify/swagger";
 import { fastifyCors} from "@fastify/cors";
 import ScalarApiReference from '@scalar/fastify-api-reference'
 import type { ZodTypeProvider } from "fastify-type-provider-zod";
+import {listWebhooks} from "@/list-webhooks";
 
 
 const App = fastify().withTypeProvider<ZodTypeProvider>()
@@ -35,6 +36,8 @@ App.register(fastifySwagger, {
 App.register(ScalarApiReference, {
     routePrefix: "/docs", //quando o alguém olhar essa rota, ele irá olhar essa documentação (óbvio)
 })
+
+App.register(listWebhooks)
 
 App.listen({ port: 3333, host: '0.0.0.0' }).then(() => {
     console.log('🔥 HTTP server running on http://localhost:3333');
