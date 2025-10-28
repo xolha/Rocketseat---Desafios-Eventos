@@ -1,6 +1,8 @@
 import { FastifyPluginAsyncZod } from "fastify-type-provider-zod";
 import { z } from "zod";
 
+//webhooks é o nome do banco de dados!!
+
 export const listWebhooks: FastifyPluginAsyncZod = async (App) => {
     App.get(
         '/api/webhooks',

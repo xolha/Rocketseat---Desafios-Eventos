@@ -8,7 +8,7 @@ import { fastifySwagger } from "@fastify/swagger";
 import { fastifyCors} from "@fastify/cors";
 import ScalarApiReference from '@scalar/fastify-api-reference'
 import type { ZodTypeProvider } from "fastify-type-provider-zod";
-import {listWebhooks} from "@/list-webhooks";
+import { listWebhooks } from "@/routes/list-webhooks";
 
 
 const App = fastify().withTypeProvider<ZodTypeProvider>()
@@ -33,7 +33,7 @@ App.register(fastifySwagger, {
     transform: jsonSchemaTransform,
 })
 
-App.register(ScalarApiReference, {
+App.register( ScalarApiReference, {
     routePrefix: "/docs", //quando o alguém olhar essa rota, ele irá olhar essa documentação (óbvio)
 })
 
