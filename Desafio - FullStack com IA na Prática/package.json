@@ -1,0 +1,17 @@
+{
+  "name": "Rocketseat---Desafios-Eventos",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "api",
+    "web"
+  ],
+  "type": "module",
+  "packageManager": "pnpm@10.9.0",
+  "dependencies": {
+    "drizzle-kit": "^0.31.5"
+  },
+  "devDependencies": {
+    "uuidv7": "^1.0.2"
+  }
+}
