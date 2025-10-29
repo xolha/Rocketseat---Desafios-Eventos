@@ -14,7 +14,7 @@ const iconButton = tv({
     },
 })
 
-interface IconButtonProps extends ComponentProps<'button'>, VariantProps<typeof IconButton> {
+interface IconButtonProps extends ComponentProps<'button'>, VariantProps<typeof iconButton> {
     icon: ReactNode,
 }
 
@@ -22,7 +22,7 @@ export function IconButton({ icon, size, className, ...props}: IconButtonProps) 
     return (
         <button
             type="button"
-            className={iconButton({size})}
+            className={iconButton({size, className})}
             {...props}
         >
             {icon}
