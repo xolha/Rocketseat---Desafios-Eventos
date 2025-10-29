@@ -1,8 +1,9 @@
 import type {ComponentProps, ReactNode} from "react";
 import {tv, type VariantProps} from 'tailwind-variants';
+import { twMerge } from 'tailwind-merge';
 
 const iconButton = tv({
-    base: 'flex items-center justify-center rounded-lg hover:bg-zinc-700 transition-colors duration-160',
+    base: 'flex items-center justify-center rounded-lg hover:bg-zinc-700',
     variants: {
         size: {
             sm: 'size-6',
@@ -22,7 +23,7 @@ export function IconButton({ icon, size, className, ...props}: IconButtonProps) 
     return (
         <button
             type="button"
-            className={iconButton({size, className})}
+            className={twMerge(iconButton({size}), className)}
             {...props}
         >
             {icon}
